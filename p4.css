@@ -1,8 +1,8 @@
 /* fontlezen_ddpic begin */
 
 #fonglezen_ddpic{ 
-	width:741px; 
-	height: 1239px; 
+	width:370px; 
+	height: 620px; 
 	position: absolute; 
 	z-index: 25; 
 	top:50%; 
@@ -12,11 +12,11 @@
 }
 #fonglezen_ddpic li{ 
 	position: absolute; 
-	left: 0; 
-	top: 0; 
+	left: 40px; 
+	top: 100px; 
 	text-align: center;  
-	width:741px; 
-	height: 1239px; 
+	width:370px; 
+	height: 620px; 
 	box-sizing:border-box;
 }
 #fonglezen_ddpic li img{ 
