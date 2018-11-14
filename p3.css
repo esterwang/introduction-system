@@ -1,0 +1,130 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: url("img/bgLeft1.png");
+}
+
+h3{
+    display: inline-block;
+    color: white;
+    position: center;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+/*图片设置*/
+.back{
+    width: 16px;
+    height: 16px;
+    padding: 2px 6px 0 4px;
+}
+.photo1{
+    border: 1px;
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    position: absolute;
+    padding-left:8px;
+}
+
+.photo2{
+    border: 1px;
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    position: absolute;
+    margin: -65px 452px;
+}
+
+#weChat{
+    width: 500px;
+    height: 700px;
+    margin:240px auto;
+    border-radius: 5px;
+    border: 1px solid white;
+    box-shadow: 5px 5px 1px rgba(255, 239, 94,0.5);
+    background: url("img/bg1.jpg") no-repeat center;
+    background-size: cover;/*cover属性可以让图片填充父级元素*/
+}
+#head{
+    height: 8%;
+    background-color: #012;
+}
+#show{
+    height: 67%;
+}
+
+/*伪类写气泡*/
+.chat-bubble{
+    position: relative;
+    margin:12px 0 12px 12px;
+    padding:6px 8px;
+    word-break: break-all;
+    background:#fff;
+    border: 1px solid #989898;
+    border-radius: 5px;
+    max-width:180px;
+}
+.chat-bubble-left {
+    left: 50px;
+}
+.chat-bubble-left:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: -20px;
+    top:5px;
+    border: 10px solid;
+    border-color:transparent #989898 transparent  transparent ;
+}
+.chat-bubble-left:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left:-16px;
+    top:7px;
+    border: 8px solid;
+    border-color:transparent #ffffff transparent  transparent ;
+}
+.chat-bubble-right {
+    right: -220px;
+    background-color: #348903;
+}
+.chat-bubble-right:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: -20px;
+    top:5px;
+    border: 10px solid;
+    border-color:transparent transparent transparent #348903;
+}
+.chat-bubble-right:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    right:-16px;
+    top:7px;
+    border: 8px solid;
+    border-color:transparent transparent transparent #348903 ;
+}
+
+#onClick{
+    height: 25%;
+    background-color: rgb(0, 0, 0);
+}
+#word{
+    width: 365px;
+    height: 70px;
+    display: inline-block;
+    border-radius: 10px;
+    background-color: #348903;
+    margin: 60px 70px 70px 70px;
+    text-align: center;
+    line-height:70px;
+}
