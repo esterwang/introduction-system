@@ -1,4 +1,4 @@
-﻿*{
+*{
   padding: 0;
   margin: 0;
 }
@@ -15,7 +15,7 @@ html,body{
   transform: translate3d(0, 0, 0);
 }
 body{
-  background: url("image/bg1.jpg") no-repeat 0 0 / cover
+  background: url("img/bg.jpg") no-repeat 0 0 / cover
   #30cb92;
 }
 /*定义容器*/
