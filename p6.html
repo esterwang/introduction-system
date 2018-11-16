@@ -1,79 +1,43 @@
-<html>
-<head>
-	<meta charset="UTF-8">
-    <title>P6</title>
-    <style>
-		body{
-			background-image: url("img/bg.jpg");
-		}
+<!DOCTYPE html>
+	<head>
+		<meta charset="UTF-8">
+		<title>P6</title>
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+		<meta name="viewport" content="width=640, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="./p6.css">
+		<style>
+			body{
+				background-image: url("img/bg.jpg");
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<img id="background" src="img/bg.jpg">
+		<!--<canvas id="canvas1" sle="z-index:-1;position:absolute;"></canvas>-->
 
-		input{
-			width: 600px;
-			height: 80px;
-			border-style: solid;
-			border-radius: 5px;
-			background-color: rgba(225,225,225,0.5);
-		}
-		#form{
-			z-index: 2;
-			position: relitive;
-			margin-top: 20%;
-			text-align: center;
-			font-size: 35px;
-		}
-		#background{
-			width: 100%;
-			height: 100%;
-			position: fixed;
-			z-index: -1;
-		}
-		#submit{
-			width: 100px;
-		}
-		#canvas1{
-			width: 100vw;
-			height: 460px;
-		}
-	</style>
-</head>
-<body>
-<img id="background" src="img/bg.jpg">
-
-		<canvas id="canvas1" style="z-index:1;position:absolute;"></canvas>
-		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-		<div id="form">
-			<input type="text" name="name"  placeholder="&nbsp;&nbsp;姓名"><br/><br/>
-			<input type="text" name="class"  placeholder="&nbsp;&nbsp;班级（e.g.计科18xx）"><br/><br/>
-			<input type="text" name="number"  placeholder="&nbsp;&nbsp;学号"><br/><br/>
-			<input type="text" name="tel"  placeholder="&nbsp;&nbsp;电话"><br/><br/>
-			<input type="button" name="submit" class="submit" id="submit" value="提交" ><br/>
+		<div class="stu-form">
+			<div class="stu-form-all">
+				<div class="stu-info">
+					<label>姓名：</label>
+					<input type="text" name="name"  placeholder="姓名">
+				</div>
+				<div class="stu-info">
+					<label>班级：</label>
+					<input type="text" name="class"  placeholder="班级（e.g.计科18xx）">
+				</div>
+				<div class="stu-info">
+					<label>学号：</label>
+					<input type="text" name="number"  placeholder="学号">
+				</div>
+				<div class="stu-info">
+					<label>电话：</label>
+					<input type="text" name="tel"  placeholder="电话">
+				</div>
+				<button type="submit" class="btn-login">提交</button>
+			</div>
 		</div>
 
-<script type="text/javascript" id="bg" src="p6.js"></script>
-
-<script>
-    var scale,scaleTimer,scaleTime;
-    scaleTimer = setInterval(wipe,5000);
-    scaleTime = 0;
-    scale = document.getElementById("sc03");
-    function wipe(){
-        if(scaleTime === 0){
-            scaleTime = 1;
-            clearInterval(scaleTimer);
-            scaleTimer = setInterval(wipe,100)
-        }
-        if(scale.style.opacity <= 0){
-            clearInterval(scaleTimer)
-        }
-        else{
-            scale.style.opacity -= 0.05
-        }
-    }
-    function bodyClick(){
-        scale.style.opacity = 1;
-        scaleTime = 0;
-        scaleTimer = setInterval(wipe,5000)
-    }
-</script>
-</body>
+		<!--<script type="text/javascript" id="bg" src="./p6.js"></script>-->
+	</body>
 </html>

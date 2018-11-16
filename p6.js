@@ -1,4 +1,28 @@
-﻿    var canvas1 = document.getElementById("canvas1");
+﻿	/*var scale,scaleTimer,scaleTime;
+	scaleTimer = setInterval(wipe,5000);
+	scaleTime = 0;
+	scale = document.getElementById("sc03");
+	function wipe(){
+		if(scaleTime === 0){
+			scaleTime = 1;
+			clearInterval(scaleTimer);
+			scaleTimer = setInterval(wipe,100)
+		}
+		if(scale.style.opacity <= 0){
+			clearInterval(scaleTimer)
+		}
+		else{
+			scale.style.opacity -= 0.05
+		}
+	}
+	function bodyClick(){
+		scale.style.opacity = 1;
+		scaleTime = 0;
+		scaleTimer = setInterval(wipe,5000)
+	}
+
+
+	var canvas1 = document.getElementById("canvas1");
     var context1 = canvas1.getContext("2d");
     var maxWidth = canvas1.width;
     var maxHeight = canvas1.height;
@@ -9,38 +33,38 @@
 	var listV = [];
 	var listDanmu = [];
 	var listColor = [];
-	context1.font = "10px 微软雅黑"
+	context1.font = "bold 10px 微软雅黑";
 
     function random(min, max) {
         return Math.floor(Math.random() * (max - min) + min)
-    }
+    }*/
 	
-	for(i=0;i<10;i++){
-		context1.fillStyle = colors[Math.floor(Math.random() * colors.length)];
-		var x = random(0,maxWidth);
-		var y = random(2,12);
-		var v = random(1,5);
-		var color = colors[Math.floor(Math.random() * colors.length)];
-		var Danmu = danmu[Math.floor(Math.random() * danmu.length)];
-		context1.fillStyle = color;
-		context1.fillText(Danmu,x,y*10);
-		listX.push(x);
-		listY.push(y);
-		listV.push(v);
-		listDanmu.push(Danmu);
-		listColor.push(color);
-	}
-	
-	var tt = setInterval(function move(){
-		context1.clearRect(0,0,maxWidth,maxHeight);
-		for(i=0;i<10;i++){
-			if(listX[i] > maxWidth){
-				listX[i] = 0;
-			}
-			else{
-				listX[i] += listV[i];
-			}
-			context1.fillStyle = listColor[i];
-			context1.fillText(listDanmu[i],listX[i],listY[i]*10);
-		}
-	},30);
+	// for(i=0;i<10;i++){
+	// 	context1.fillStyle = colors[Math.floor(Math.random() * colors.length)];
+	// 	var x = random(0,maxWidth);
+	// 	var y = random(2,12);
+	// 	var v = random(1,5);
+	// 	var color = colors[Math.floor(Math.random() * colors.length)];
+	// 	var Danmu = danmu[Math.floor(Math.random() * danmu.length)];
+	// 	context1.fillStyle = color;
+	// 	context1.fillText(Danmu,x,y*10);
+	// 	listX.push(x);
+	// 	listY.push(y);
+	// 	listV.push(v);
+	// 	listDanmu.push(Danmu);
+	// 	listColor.push(color);
+	// }
+	//
+	// var tt = setInterval(function move(){
+	// 	context1.clearRect(0,0,maxWidth,maxHeight);
+	// 	for(i=0;i<10;i++){
+	// 		if(listX[i] > maxWidth){
+	// 			listX[i] = 0;
+	// 		}
+	// 		else{
+	// 			listX[i] += listV[i];
+	// 		}
+	// 		context1.fillStyle = listColor[i];
+	// 		context1.fillText(listDanmu[i],listX[i],listY[i]*10);
+	// 	}
+	// },30);

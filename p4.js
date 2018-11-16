@@ -4,15 +4,16 @@
 		var actions = {
 			isMobile:function(){	//判断是否为移动端
 				var sUserAgent= navigator.userAgent.toLowerCase(),
-				bIsIpad= sUserAgent.match(/ipad/i) == "ipad",
-				bIsIphoneOs= sUserAgent.match(/iphone os/i) == "iphone os",
-				bIsMidp= sUserAgent.match(/midp/i) == "midp",
-				bIsUc7= sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4",
-				bIsUc= sUserAgent.match(/ucweb/i) == "ucweb",
-				bIsAndroid= sUserAgent.match(/android/i) == "android",
-				bIsCE= sUserAgent.match(/windows ce/i) == "windows ce",
-				bIsWM= sUserAgent.match(/windows mobile/i) == "windows mobile",
-				bIsWebview = sUserAgent.match(/webview/i) == "webview";
+				bIsIpad= sUserAgent.match(/ipad/i),
+				bIsIphoneOs= sUserAgent.match(/iphone os/i),
+				bIsMidp= sUserAgent.match(/midp/i),
+				bIsUc7= sUserAgent.match(/rv:1.2.3.4/i),
+				bIsUc= sUserAgent.match(/ucweb/i),
+				bIsAndroid= sUserAgent.match(/android/i),
+				bIsCE= sUserAgent.match(/windows ce/i),
+				bIsWM= sUserAgent.match(/windows mobile/i),
+				bIsWebview = sUserAgent.match(/webview/i);
+
 				return (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM);
 			},
 			stopDefault:function(e){	//阻止浏览器默认事件方法：
@@ -68,10 +69,12 @@
 			}
 		};
 
-		flzpic.fonglezen_ddpic.on(actions.touchStart(),'li',function(e){
-			var e=e || window.event;
+		flzpic.fonglezen_ddpic.on(actions.touchStart(),'li',function(event){
+			var e = event || window.event;
+			console.log(actions.isMobile());
 			if(actions.isMobile()){
-				var touch = event.targetTouches[0];
+				console.log(e.touches);
+				var touch = e.touches[0];
 				flzpic.pstartX = touch.pageX;
 				flzpic.pstartY = touch.pageY;
 			}else{
@@ -84,11 +87,11 @@
 		
 		});
 
-		flzpic.fonglezen_ddpic.on(actions.touchMove(),'li',function(e){
-			var e=e || window.event;
+		flzpic.fonglezen_ddpic.on(actions.touchMove(),'li',function(event){
+			var e= event || window.event;
 			actions.stopDefault(e);
 			if(actions.isMobile()){
-				var touch = event.touches[0];
+				var touch = e.touches[0];
 				flzpic.pendX = touch.pageX;
 				flzpic.pendY = touch.pageY;
 			}else{
@@ -100,8 +103,8 @@
 		});
 
 		
-		flzpic.fonglezen_ddpic.on(actions.touchEnd(),'li',function(e){
-			var e=e || window.event;
+		flzpic.fonglezen_ddpic.on(actions.touchEnd(),'li',function(event){
+			var e = event || window.event;
 			flzpic.flz_dpli = flzpic.fonglezen_ddpic.find('li');
 
 			if(Math.abs(flzpic.pmoveY) < flzpic.windowHeight*0.1 && flzpic.pmoveX < 0){
